@@ -1,0 +1,146 @@
+#!/bin/bash
+
+function repeat {
+	if [[ "$1" -eq 1 ]]
+	then
+		ABOUT		
+        elif [[ "$1" -eq 2 ]]
+        then
+                EDUCATION
+        elif [[ "$1" -eq 3 ]]
+        then
+                EXPERIENCES
+        elif [[ "$1" -eq 4 ]]
+        then
+                CERTIFICATES
+        elif [[ "$1" -eq 5 ]]
+        then
+                COURCES
+	elif [[ "$1" -eq 6 ]]
+	then
+		PROJECTS
+        elif [[ "$1" -eq 7 ]]
+        then
+                REFERANCES
+        fi
+}
+
+function ABOUT {
+        clear
+	echo ""
+	echo  " ABOUT" 
+	echo  "------------------------------"
+	echo ""
+
+	read choosed
+	choosing
+	read choosed
+	repeat $choosed
+}
+
+function EDUCATION {
+	clear
+	echo ""
+	echo  "EDUCATION" '	' "| PERIOD" '	' "| GDP(max 4.0)" '	' "| FINISHED/CONTINUE"	
+	echo  "-------------------------------------------------------------------------------------"
+	echo ""
+
+	read choosed
+	choosing
+	read choosed 
+	repeat $choosed
+}
+
+function EXPERIENCES {
+	clear
+	echo ""
+	echo  "EXPERIENCE" '			' "| PERIOD" '		' "| LOCATION"
+	echo  "----------------------------------------------------------------------------------"
+	echo ""
+
+	read choosed
+        choosing
+        read choosed 
+        repeat $choosed
+}
+
+function CERTIFICATES { 
+	clear
+	echo ""
+	echo "CERTIFICATE" '			' "| DATE"
+	echo "-------------------------------------------"
+	echo ""
+
+        read choosed
+        clear
+        choosing
+        read choosed
+        repeat $choosed
+}
+
+function COURCES {
+	clear
+	echo ""
+	echo "COURSE" '		' "| DATE"
+	echo "------------------------------------" 
+	echo ""
+        
+	read choosed
+	clear
+	choosing
+	read choosed
+        repeat $choosed
+}
+
+function PROJECTS {
+	clear
+	echo ""
+	echo  "PROJECT" '			' "SYSTEM"
+	echo  "------------------------------------------------------"
+	echo ""
+	
+	read choosed
+        clear
+        choosing
+        read choosed
+        repeat $choosed
+}
+
+function REFERANCES {
+	clear
+	echo ""
+	echo "JOB" '	' "| LOCATION " '	'  "| DATE"
+	echo "------------------------------------------------"
+	echo ""
+
+        read choosed
+	clear
+        choosing
+        read choosed
+        repeat $choosed
+}	
+
+function choosing {
+	clear
+	echo "######################################################################################"
+	echo ""
+	echo ""
+	echo ""
+	echo '			' "1- ABOUT"
+	echo '			' "2- EDUCATION"
+	echo '			' "3- EXPERIENCES"
+	echo '			' "4- CERTIFICATES"
+	echo '			' "5- COURCES"
+	echo '			' "6- PROJECTS"
+	echo '			' "7- REFERANCES"
+	echo '			' "8- EXIT" 
+	echo ""
+	echo ""
+	echo ""
+	echo "######################################################################################"
+}
+
+choosing
+read choosed
+
+repeat $choosed
